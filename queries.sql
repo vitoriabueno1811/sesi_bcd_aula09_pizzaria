@@ -17,14 +17,10 @@ SELECT c.nome FROM clientes c INNER JOIN pedidos p ON c.cliente_id = p.cliente_i
 
 -- F) 
 SELECT * FROM itens_pedido WHERE pedido_id = 3;
-SELECT pi.nome FROM itens_pedido i JOIN pizzas p ON i.pizza_id WHERE pedido_id = 3;
+SELECT pi.nome FROM itens_pedido i JOIN pizzas p ON i.pizza_id = p.pizza_id WHERE pedido_id = 3;
 
 -- G)
-INSERT INTO clientes
-(nome, logradouro, numero, bairro, referencia, telefone)
-VALUES
-('Gaspar Oliveira', 'Rua Lizandro Silva', 21, 'São Dimas',
-'Ao lado da igrejinha', '19 99898-1141');
+INSERT INTO clientes (nome, logradouro, numero, bairro, referencia) VALUES ('Gaspar Oliveira', 'Rua Lizandro Silva', 21, 'São Dimas', 'Ao lado da igrejinha');
 
 -- H)
 INSERT INTO pizzas(nome, descricao, preco) VALUES ('A moda do chef', 'Molho de tomate, palmito macio em rodelas, coberto com catupiry, frango desfiado, ovos, carne seca, oregano e azeitonas', 41.90);
@@ -43,19 +39,8 @@ INSERT INTO itens_pedido (pedido_id, pizza_id, quantidade, preco_unitario)
 SELECT p.pedido_id, pi.pizza_id, 2, pi.preco FROM pedidos p JOIN clientes c ON p.cliente_id = c.cliente_id JOIN pizzas pi ON pi.nome = 'A moda do chef' WHERE c.nome = 'Gaspar Oliveira' ORDER BY p.pedido_id DESC LIMIT 1;
 
 
-UPDATE itens_pedido SET quantidade = 3 WHERE pedido_id = (
-    SELECT pedido_id FROM (
-        SELECT p.pedido_id
-        FROM pedidos p
-        JOIN clientes c ON p.cliente_id = c.cliente_id
-        ORDER BY p.pedido_id DESC
-        LIMIT 1
-    ) AS ultimo_pedido
-)
-AND pizza_id = (
-    SELECT pizza_id FROM pizzas
-    WHERE nome = 'A moda do chef'
-);
+UPDATE itens_pedido SET quantidade = 3 WHERE pedido_id = 
+( SELECT pedido_id FROM ( SELECT p.pedido_id FROM pedidos p JOIN clientes c ON p.cliente_id = c.cliente_id ORDER BY p.pedido_id DESC LIMIT 1 ) AS ultimo_pedido ) AND pizza_id = ( SELECT pizza_id FROM pizzas WHERE nome = 'A moda do chef');
 
 INSERT INTO itens_pedido (pedido_id, pizza_id, quantidade, preco_unitario)
 SELECT p.pedido_id, pi.pizza_id, 1, pi.preco FROM pedidos p JOIN clientes c ON p.cliente_id = c.cliente_id JOIN pizzas pi ON pi.nome = 'Margherita' WHERE c.nome = 'Gaspar Oliveira' ORDER BY p.pedido_id DESC LIMIT 1;
