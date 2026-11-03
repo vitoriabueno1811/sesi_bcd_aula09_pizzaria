@@ -6,7 +6,7 @@
 
 # queries.sql
 
-Este arquivo contém os scripte consultas do banco de dados da pizzaria. focado na Realização contagem e verificação das tabelas, executa consultas (INNER JOIN), calcula o total de itens vendidos, filtra informações de pedidos e gerencia os fluxos de inserção de novos clientes e pizzas.
+Este contém os scripts consultas do banco de dados da pizzaria. focado na Realização contagem e verificação das tabelas, executa consultas (INNER JOIN), calcula o total de itens vendidos, filtra informações de pedidos e gerencia o andamento de novos clientes e pizzas.
 
  - Foi criado um relatório que mostra todos os pedidos, itens, nome dos clientes e das pizzas.
  - Foi Acrescentado uma coluna de subtotal 
