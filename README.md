@@ -4,6 +4,10 @@
 
 ## Desafio 1
 
+# queries.sql
+
+Este arquivo contém os scripte consultas do banco de dados da pizzaria. focado na Realização contagem e verificação das tabelas, executa consultas (INNER JOIN), calcula o total de itens vendidos, filtra informações de pedidos e gerencia os fluxos de inserção de novos clientes e pizzas.
+
  - Foi criado um relatório que mostra todos os pedidos, itens, nome dos clientes e das pizzas.
  - Foi Acrescentado uma coluna de subtotal 
  - Foi agrupado os pedidos e o cálculo total junto com a contação de pizzas cada pedido possui
@@ -11,6 +15,11 @@
 ---
 
 ## Desafio 2 
+
+# views.sql
+
+Este arquivo é responsável pela criação de tabelas (VIEWs), extraindo consultas complexas para facilitar a geração de relatórios Simplifica linhas de código ao salvar consultas, como relatório de pedidos com os nomes dos clientes, a soma total de itens das pizzas pedidas com seus respectivos valores, permitindo quesejam acessados com um comando de SELECT.
+
 
  - Foi acrescentada a Pizza 'Moda do Chef' no Cardápio
 
