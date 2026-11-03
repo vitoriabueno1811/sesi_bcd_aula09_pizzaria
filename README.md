@@ -18,7 +18,7 @@ Este arquivo contém os scripte consultas do banco de dados da pizzaria. focado 
 
 # views.sql
 
-É responsável pela criação de tabelas (VIEWs), extraindo consultas complexas para facilitar a geração de relatórios Simplifica linhas de código ao salvar consultas, como relatório de pedidos com os nomes dos clientes, a soma total de itens das pizzas pedidas com seus respectivos valores, permitindo quesejam acessados com um comando de SELECT.
+É responsável pela criação de tabelas (VIEWs), verificando consultas complexas para facilitar a geração de relatórios e simplifica linhas de código, como relatório de pedidos com os nomes dos clientes, a soma total de itens das pizzas pedidas com seus valores, permitindo que sejam acessados com um comando de SELECT.
 
 
  - Foi acrescentada a Pizza 'Moda do Chef' no Cardápio
