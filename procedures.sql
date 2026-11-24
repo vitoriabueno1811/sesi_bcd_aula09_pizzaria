@@ -57,16 +57,4 @@ CALL pedidoDeUmItem(
 );
 
 SELECT 
-    p.pedido_id,
-    c.nome AS cliente_cadastrado,
-    c.logradouro AS endereco_referencia,
-    pz.nome AS pizza,
-    ip.quantidade,
-    pz.valor AS valor_unitario,
-    p.valor AS total_pedido,
-    p.data,
-    p.hora
-FROM Pedidos p
-JOIN Clientes c ON p.cliente_id = c.Cliente_id
-JOIN Itens_Pedido ip ON p.pedido_id = ip.pedido_id
-JOIN Pizzas pz ON ip.pizza_id = pz.pizza_id;
+    p.pedido_id, c.nome AS cliente_cadastrado, c.logradouro AS endereco_referencia,  pz.nome AS pizza, ip.quantidade, pz.valor AS valor_unitario, p.valor AS total_pedido, p.data, p.hora FROM Pedidos p JOIN Clientes c ON p.cliente_id = c.Cliente_id JOIN Itens_Pedido ip ON p.pedido_id = ip.pedido_id JOIN Pizzas pz ON ip.pizza_id = pz.pizza_id;
